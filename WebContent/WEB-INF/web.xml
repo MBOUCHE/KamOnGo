@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <!-- <display-name>KamOnGo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list> -->
+  
+  
+	<servlet>
+		<servlet-name>NouvelUtilisateur</servlet-name>
+		<servlet-class>com.KamOnGo.Utilisateur.NouvelUtilisateur</servlet-class>
+		
+		<!-- <init-param>
+			<param-name>chemin</param-name>
+			<param-value>/fichiers/</param-value>
+		</init-param> -->
+		<multipart-config>
+			<location>c:/KamOnGo</location>
+			<max-file-size>3048500</max-file-size><!--  3 mega -->
+			<max-request-size>524288000</max-request-size><!--  Cinquante megas -->
+			<file-size-threshold>1024</file-size-threshold><!--  un kilo -->
+		</multipart-config>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>NouvelUtilisateur</servlet-name>
+		<url-pattern>/private/page-register</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Connection</servlet-name>
+		<servlet-class>com.KamOnGo.Servlets.Connection</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Connection</servlet-name>
+		<url-pattern>/private/page-login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LocaliserUtl</servlet-name>
+		<servlet-class>com.KamOnGo.Utilisateur.LocaliserUtl</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LocaliserUtl</servlet-name>
+		<url-pattern>/private/maps-gmaps</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ListStations</servlet-name>
+		<servlet-class>com.KamOnGo.Servlet.ListStations</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ListStations</servlet-name>
+		<url-pattern>/private/list-stations</url-pattern>
+	</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>ListUtilisateurs</servlet-name>
+		<servlet-class>com.KamOnGo.Servlets.ListUtilisateurs</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ListUtilisateurs</servlet-name>
+		<url-pattern>/private/list-utilisateur</url-pattern>
+	</servlet-mapping>
+			
+	<servlet>
+		<servlet-name>ListAgences</servlet-name>
+		<servlet-class>com.KamOnGo.Servlets.ListAgences</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ListAgences</servlet-name>
+		<url-pattern>/public/site/prices</url-pattern>
+	</servlet-mapping>
+				
+	<servlet>
+		<servlet-name>GestionAccueil</servlet-name>
+		<servlet-class>com.KamOnGo.Servlets.GestionAccueil</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GestionAccueil</servlet-name>
+		<url-pattern>/private/index</url-pattern>
+	</servlet-mapping>
+	
+	<servlet><servlet-name>Deconnexion</servlet-name>
+		<servlet-class>com.KamOnGo.Servlets.Deconnexion</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Deconnexion</servlet-name>
+		<url-pattern>/private/deconnexion</url-pattern>
+	</servlet-mapping>
+		
+	<servlet><servlet-name>ListAgenceAD</servlet-name>
+		<servlet-class>com.KamOnGo.Servlets.ListAgenceAD</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListAgenceAD</servlet-name>
+		<url-pattern>/private/list-agences</url-pattern>
+	</servlet-mapping>
+	
+			
+	<servlet><servlet-name>GererMap</servlet-name>
+		<servlet-class>com.KamOnGo.Servlets.GererMap</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GererMap</servlet-name>
+		<url-pattern>/private/maps-gmap</url-pattern>
+	</servlet-mapping>
+</web-app>
